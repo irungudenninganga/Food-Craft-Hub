@@ -1,7 +1,7 @@
 const mealDbURL='https://themealdb.com/api/json/v1/1/categories.php'
 const appendEl = document.getElementById('appendChild')
 let mealsEl=document.getElementById('meals')
-let arrs={}
+
 
 document.addEventListener('DOMContentLoaded', ()=> {
     fetch(mealDbURL)
@@ -21,37 +21,39 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 <img src="${arr.strCategoryThumb}" class="card-img-top category-img" alt="food category">  
             </div> 
         `;
-    
+       // const img = document.querySelectorAll('img')
         appendEl.appendChild(card);
+        //console.log(appendEl)
+        console.log(`${arr.strCategory}`)
+        
     }
     
     // Add a single event listener to the parent element (appendEl)
-    appendEl.addEventListener('click', function (event) {
-        if (event.target.classList.contains('category-img')) {
-            addSecond()
-            //alert('clicked')
-        }
-    });
- 
+
     })
     
 })
-let second = 'https://themealdb.com/api/json/v1/1/filter.php?i=beef'
+let second = 'https://themealdb.com/api/json/v1/1/random.php'
 
-
+addSecond()
 function addSecond(){
     fetch(second)
       .then(res =>(res.json()))
       .then(data => {
-        console.log(data['meals'])
 
         for(meal of data['meals'] ){
-            console.log(meal)
             mealsEl.innerHTML+=`
-                <img src=${meal.strMealThumb}>
-                <h4>${meal.strMeal}</h4>
+            <img class="img-meal" src=${meal.strMealThumb}>
+            <h4 >${meal.strMeal}</h4>
             `
+            let imgMeal=document.querySelector('.img-meal')
+            imgMeal.addEventListener('click', ()=> {
+                alert('clicked')
+                
 
+            })
+            
+            
         }
       })
 }

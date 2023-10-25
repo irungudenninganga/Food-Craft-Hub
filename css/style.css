@@ -12,3 +12,10 @@ h4{
     justify-content: space-evenly;
     
 }
+.img-meal{
+    cursor: pointer;
+}
+
+.img-meat{
+    width: 400px;
+} 
