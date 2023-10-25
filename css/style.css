@@ -23,3 +23,6 @@ h4{
     width: 400px;
     color: rgb(240, 0, 60);
 }
+#para:hover{
+    color: rgb(75, 70, 70);
+}
