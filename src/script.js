@@ -40,16 +40,24 @@ function addSecond(){
     fetch(second)
       .then(res =>(res.json()))
       .then(data => {
-
+        
         for(meal of data['meals'] ){
+            console.log(meal)
             mealsEl.innerHTML+=`
             <img class="img-meal" src=${meal.strMealThumb}>
             <h4 >${meal.strMeal}</h4>
             `
             let imgMeal=document.querySelector('.img-meal')
             imgMeal.addEventListener('click', ()=> {
-                alert('clicked')
-                
+                // alert('clicked')
+                console.log(imgMeal)
+                mealsEl.innerHTML+=`
+                    <p><b>Category</b> : ${meal.strCategory}</p>
+                    <p><b>Area</b> : ${meal.strArea}</p>
+                    <p id="para"><b>Recipe</b> : ${meal.strInstructions}</p>
+                    
+                    
+                `
 
             })
             
