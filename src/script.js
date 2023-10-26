@@ -79,10 +79,26 @@ function addSecond(){
 }
 // this function is used to make the search request
  function searchBar(){
+    
     // adding a submit event listner to the form that holds the search section
     form.addEventListener('submit', (e)=> {
         // this e.preventDefault() is used to remove the defult behavoiur of the form
         e.preventDefault()
+        
+        console.log(inputEl.value)
+    let search=`https://themealdb.com/api/json/v1/1/search.php?s=${inputEl.value}`
+    fetch(search)
+    .then(res => res.json())
+    .then(result => {
+        console.log(result['meals'][0]['strMealThumb'])
+        mealsEl.innerHTML=`
+            <img src=${result['meals'][0]['strMealThumb']}>
+            
+                    <p><b>Area</b> : ${meal.strArea}</p>
+                    <p id="para"><b>Recipe</b> : ${meal.strInstructions}</p>
+        `
+    })
+    inputEl.value=''
     })
  }
 
