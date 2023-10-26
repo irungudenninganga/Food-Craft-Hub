@@ -41,5 +41,28 @@ open folder in text editor
 Follow the instruction above to use and run the project localy. 
 
 ## How the project works
+> Fist is that one can access any meal avalable on the MealDB via the search bar by simply making a search request
+  a responce will be returned on the DOM either 
+  * image of the meal requested 
+  * name of the meal 
+  * category of the meal
+  * recipe to make the dish
+  ![Search responce](./images/search.png)
+
+> *NB* if no results its found note that there will be no interactivity 
+
+> To view the category of food available simply click the 'category' button
+![Category button](./images/category.png)
+
+> By defult the browser will display a random meal, if intrested in knowing more about the meal simply 
+  make a click at the image
+  ![Random meal](./images/random.png)
+
+> To leave a comment simply enter the comment section type your comment and click the submit button and the 
+  comment will be simply displayed on the DOM
+
+  ![Comment section](./images/comment.png)
+
+
 
 
