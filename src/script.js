@@ -90,16 +90,21 @@ function addSecond(){
     fetch(search)
     .then(res => res.json())
     .then(result => {
-        console.log(result['meals'][0]['strMealThumb'])
+        console.log(result['meals'][0])
         mealsEl.innerHTML=`
             <img src=${result['meals'][0]['strMealThumb']}>
-            
-                    <p><b>Area</b> : ${meal.strArea}</p>
-                    <p id="para"><b>Recipe</b> : ${meal.strInstructions}</p>
+            <h4> ${result['meals'][0]['strMeal']}</h4>
+            <p><b>Category</b> : ${result['meals'][0]['strCategory']}</p>
+                    <p><b>Area</b> : ${result['meals'][0]['strArea']}</p>
+                    <p id="para"><b>Recipe</b> : ${result['meals'][0]['strInstructions']}</p>
+                    
         `
+        // console.log(meal.strCategory)
+
     })
     inputEl.value=''
     })
+    // return "Try another food"
  }
 
  // this addComment() is used to add the comment section on the DOM
