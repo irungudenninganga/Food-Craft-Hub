@@ -77,16 +77,22 @@ function addSecond(){
         }
     })
 }
-
+// this function is used to make the search request
  function searchBar(){
+    // adding a submit event listner to the form that holds the search section
     form.addEventListener('submit', (e)=> {
+        // this e.preventDefault() is used to remove the defult behavoiur of the form
         e.preventDefault()
     })
  }
+
+ // this addComment() is used to add the comment section on the DOM
 function addComment(){
     const commentInput=document.getElementById('comment')
     const commentAdded= document.getElementById('comment-added')
+    // event listner for the submit comment
     comment.addEventListener('submit', (e)=> {
+         // this e.preventDefault() is used to remove the defult behavoiur of the form
         e.preventDefault()
         //console.log(commentInput)
         commentAdded.innerHTML+=`
