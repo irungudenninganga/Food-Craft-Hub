@@ -1,10 +1,12 @@
 //Api ur; to get the category of the meals
 const mealDbURL='https://themealdb.com/api/json/v1/1/categories.php'
  // initializing the random url to the Api 
- let second = 'https://themealdb.com/api/json/v1/1/random.php'
-
+ let randomMeal = 'https://themealdb.com/api/json/v1/1/random.php'
+const form=document.getElementById('form')
+let inputEl=document.getElementById('input')
 const appendEl = document.getElementById('appendChild')
 let mealsEl=document.getElementById('meals')
+const comment=document.getElementById('form-comment')
 
 // 1st event listner for dom content loaded
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -34,19 +36,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
         
     }
     
-    // Add a single event listener to the parent element (appendEl)
+    
 
     })
+    searchBar()
+    addSecond()
+    addComment()
     
 })
 
 // calling out our addSecond element which is the random meal
-addSecond()
+
 
 // this function is used to make the second application
 function addSecond(){
     // making a get request tp get random meal
-    fetch(second)
+    fetch(randomMeal)
       .then(res =>(res.json()))
       .then(data => {
         // iterating over an object 
@@ -73,4 +78,20 @@ function addSecond(){
     })
 }
 
- 
+ function searchBar(){
+    form.addEventListener('submit', (e)=> {
+        e.preventDefault()
+    })
+ }
+function addComment(){
+    const commentInput=document.getElementById('comment')
+    const commentAdded= document.getElementById('comment-added')
+    comment.addEventListener('submit', (e)=> {
+        e.preventDefault()
+        //console.log(commentInput)
+        commentAdded.innerHTML+=`
+            <li>${commentInput.value}</li> <br>
+        `
+
+    })
+}

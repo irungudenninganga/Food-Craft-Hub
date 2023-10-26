@@ -11,6 +11,10 @@ a promise from the Get request either rejected or the information specified on t
 on the DOM which is dom manipulation.
 > After displaying the infomation on the DOM we add interactivity to the elemets.
 
+## Author
+
+  * [irungudennis](https://github.com/irungudenninganga)
+
 ## Acknowledgment
 [The mealDB](https://www.themealdb.com/api.php)
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
@@ -18,7 +22,8 @@ on the DOM which is dom manipulation.
 ## Run locally
 first start by making a copy of the project on your GitHub account by forking and clone it to the local computer to be able to access the project
 
-Go to the terminal and to the directory where the copy exist on the local machine
+Go to the terminal and to the directory where the copy exist on the local machine.
+
 
 ```bash
   cd Food-Craft-Hub

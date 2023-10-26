@@ -28,3 +28,16 @@ h4{
 #para:hover{
     color: rgb(75, 70, 70);
 }
+#comment{
+    width: 700px;
+    height: 70px;
+    
+}
+li{
+    list-style: none;
+}
+.submit{
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 3px;
+}
