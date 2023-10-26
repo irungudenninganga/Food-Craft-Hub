@@ -15,7 +15,9 @@ h4{
 .img-meal{
     cursor: pointer;
 }
-
+.class-body{
+   text-align: center;
+}
 .img-meat{
     width: 400px;
 } 
