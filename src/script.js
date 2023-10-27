@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
     fetch(mealDbURL)
     .then(res => res.json())
     .then(data => {
+
        // console.log(data)
        //console.log(data['categories'])
+
         // iterating over the object
        for (arr of data['categories']) {
         // creating a new element to hold the card
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     
 
     })
+    // calling out all the functions to run when the DOM content is full loaded 
     searchBar()
     addSecond()
     addComment()
@@ -59,8 +62,8 @@ function addSecond(){
             //console.log(meal)
             // adding context of mealsEl in the DOM
             mealsEl.innerHTML+=`
-            <img class="img-meal" src=${meal.strMealThumb}>
-            <h4 >${meal.strMeal}</h4>
+              <img class="img-meal" src=${meal.strMealThumb}>
+              <h4 >${meal.strMeal}</h4>
             `
             // getting the image to be able to manipulate and give functionality to the image
             let imgMeal=document.querySelector('.img-meal')
@@ -95,8 +98,8 @@ function addSecond(){
             <img src=${result['meals'][0]['strMealThumb']}>
             <h4> ${result['meals'][0]['strMeal']}</h4>
             <p><b>Category</b> : ${result['meals'][0]['strCategory']}</p>
-                    <p><b>Area</b> : ${result['meals'][0]['strArea']}</p>
-                    <p id="para"><b>Recipe</b> : ${result['meals'][0]['strInstructions']}</p>
+            <p><b>Area</b> : ${result['meals'][0]['strArea']}</p>
+            <p id="para"><b>Recipe</b> : ${result['meals'][0]['strInstructions']}</p>
                     
         `
         // console.log(meal.strCategory)
