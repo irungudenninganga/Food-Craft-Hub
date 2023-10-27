@@ -20,7 +20,13 @@ on the DOM which is dom manipulation.
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ## Run locally
-first start by making a copy of the project on your GitHub account by forking and clone it to the local computer to be able to access the project
+first start by making a copy of the project on your GitHub account by forking and clone it to the local computer to be able to access the project.
+After making a fork to your Github account click on the 'CODE' button and copy the SSH key then
+
+
+```bash
+  git clone git@github.com:userName/Food-Craft-Hub.git
+```
 
 Go to the terminal and to the directory where the copy exist on the local machine.
 
