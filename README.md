@@ -50,10 +50,14 @@ Follow the instruction above to use and run the project localy.
 
     ![Search responce](./images/search.png)
 
-> *NB* if no results its found note that there will be no interactivity 
+> *NB* if no results its found note that there will be no interactivity on the DOM
 
 > To view the category of food available simply click the 'category' button
-![Category button](./images/category.png)
+  ![Category button](./images/category.png)
+  
+  This results will be shown below
+  ![category of food](./images/category-food.png)
+
 
 > By defult the browser will display a random meal, if intrested in knowing more about the meal simply 
   make a click at the image
@@ -71,6 +75,7 @@ Follow the instruction above to use and run the project localy.
   * communicating with the server.
   * listenig to events on the DOM.
   * manipulating the DOM.
+  * hovering effect on css
 
   ## 🚀 About Me
  * I'm a full stack developer
