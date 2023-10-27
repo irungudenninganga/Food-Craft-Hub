@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     .then(res => res.json())
     .then(data => {
 
-       // console.log(data)
-       //console.log(data['categories'])
-
         // iterating over the object
        for (arr of data['categories']) {
         // creating a new element to hold the card
@@ -31,15 +28,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 <img src="${arr.strCategoryThumb}" class="card-img-top category-img" alt="food category">  
             </div> 
         `;
-       // const img = document.querySelectorAll('img')
+       
         appendEl.appendChild(card);
-        //console.log(appendEl)
-        //console.log(`${arr.strCategory}`)
-        
+            
     }
     
-    
-
     })
     // calling out all the functions to run when the DOM content is full loaded 
     searchBar()
@@ -47,9 +40,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     addComment()
     
 })
-
-// calling out our addSecond element which is the random meal
-
 
 // this function is used to make the second application
 function addSecond(){
@@ -59,7 +49,7 @@ function addSecond(){
       .then(data => {
         // iterating over an object 
         for(meal of data['meals'] ){
-            //console.log(meal)
+            
             // adding context of mealsEl in the DOM
             mealsEl.innerHTML+=`
               <img class="img-meal" src=${meal.strMealThumb}>
@@ -88,12 +78,11 @@ function addSecond(){
         // this e.preventDefault() is used to remove the defult behavoiur of the form
         e.preventDefault()
         
-        console.log(inputEl.value)
     let search=`https://themealdb.com/api/json/v1/1/search.php?s=${inputEl.value}`
     fetch(search)
     .then(res => res.json())
     .then(result => {
-        console.log(result['meals'][0])
+    
         mealsEl.innerHTML=`
             <img src=${result['meals'][0]['strMealThumb']}>
             <h4> ${result['meals'][0]['strMeal']}</h4>
@@ -102,12 +91,11 @@ function addSecond(){
             <p id="para"><b>Recipe</b> : ${result['meals'][0]['strInstructions']}</p>
                     
         `
-        // console.log(meal.strCategory)
-
     })
+
     inputEl.value=''
     })
-    // return "Try another food"
+    
  }
 
  // this addComment() is used to add the comment section on the DOM
@@ -122,6 +110,5 @@ function addComment(){
         commentAdded.innerHTML+=`
             <li>${commentInput.value}</li> <br>
         `
-
-    })
+        })
 }
